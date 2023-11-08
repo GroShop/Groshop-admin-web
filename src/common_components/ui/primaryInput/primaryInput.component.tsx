@@ -14,9 +14,8 @@ interface IPrimaryInputProps {
   inputWrapperStyle?: string;
   securityPassword?: boolean;
   isMultiLine?: boolean;
-  value: string;
   rules?: unknown;
-  control: Record<string, any>;
+  control: any;
 }
 
 const PrimaryInput = (props: IPrimaryInputProps) => {

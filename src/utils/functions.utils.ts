@@ -1,4 +1,4 @@
-import { useState,useOptimistic } from "react";
+import { useState,useOptimistic, useMemo } from "react";
 import { useLocation } from "react-router-dom";
 import toast, { Toaster } from 'react-hot-toast';
 import Compressor from 'compressorjs';
@@ -72,7 +72,7 @@ export const uploadFile = (
 
 export const useQuery = () => {
   const { search } = useLocation();
-  return React.useMemo(() => new URLSearchParams(search), [search]);
+  return useMemo(() => new URLSearchParams(search), [search]);
 };
 
 export const getDropdownData = (data: any) => {
@@ -122,8 +122,7 @@ export const toastFailure = (failure: string) => {
 export const phoneRegex = new RegExp(
   /^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/,
 );
-const delayError=()=>{
-  setTimeout(() => {
-    return
-  }, 2000);
+
+export const navigate = (path:string) => {
+  window.location.href = path
 }

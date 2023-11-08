@@ -8,5 +8,6 @@ import LottieComponent from "@/common_components/ui/lottie/lottie.component";
 import Container from "@/common_components/hoc/container/container";
 import Assets from "@/imports/assets.imports";
 import Validation from "@/utils/validation.utils";
+import OtpComponent from "@/components/otp/otp.component";
 
-export { TanStackProvider, Models, Functions, PrimaryInput, PrimaryButton, LottieComponent, Container, Assets,Validation };
+export { TanStackProvider, Models, Functions, PrimaryInput, PrimaryButton, LottieComponent, Container, Assets, Validation, OtpComponent };

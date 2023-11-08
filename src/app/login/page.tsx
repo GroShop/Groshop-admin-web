@@ -5,8 +5,8 @@ import { useForm } from "react-hook-form";
 import PrimaryInput from "@/common_components/ui/primaryInput/primaryInput.component";
 import Models from "@/imports/models.imports";
 import PrimaryButton from "@/common_components/ui/primaryButton/primaryButton";
-import { toastFailure, useSetState } from "@/utils/functions.utils";
-import { Assets, Container, Validation } from "@/utils/import.utils";
+import {  useSetState } from "@/utils/functions.utils";
+import { Assets, Container, Functions, Validation } from "@/utils/import.utils";
 import Image from "next/image";
 import { useMutation } from "@tanstack/react-query";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -17,12 +17,10 @@ const LoginScreen = () => {
 
   // state
   const [state, setState] = useSetState({
-    email: "",
-    password: "",
     passwordIcon: true,
   });
-  
-  // userlogin
+
+  // hook
   const {
     control,
     handleSubmit,
@@ -37,11 +35,11 @@ const LoginScreen = () => {
 
   const { mutateAsync: userLogin } = useMutation({
     mutationFn: (body: Record<string, string>) => (body.email_verified ? Models.auth.socialSignIn(body) : Models.auth.login(body)),
-    onSuccess: (res:  any | unknown) => {
-      localStorage.setItem("id", res.data._id);
+    onSuccess: (res: any | unknown) => {
+      localStorage.setItem("user_id", res.data._id);
       localStorage.setItem("role", res.data.role);
       localStorage.setItem("token", res.token);
-      window.location.href = "/home";
+      Functions.navigate( "/home");
     },
   });
 
@@ -55,7 +53,7 @@ const LoginScreen = () => {
       };
       userLogin(body);
     } else {
-      toastFailure("Mail Doesn't exist");
+      Functions.toastFailure("Mail Doesn't exist");
     }
   };
   // useEffect(() => {
@@ -78,11 +76,11 @@ const LoginScreen = () => {
           </div>
           <div className="w-[420px] ">
             <div className="font-DMSans-bold text-[50px] text-center text-primary-green">Login</div>
-            <form action="justify-center flex">
+            <form onSubmit={handleSubmit((e: Record<string, string>) => userLogin(e))}>
               <div className="justify-center flex-col">
                 <label className="font-DMSans-regular text-lg text-primary-green ">Email</label>
                 <div className=""></div>
-                <PrimaryInput name="email" control={control} value={state.email} />
+                <PrimaryInput name="email" control={control} />
                 <div className="font-DMSans-regular text-lg text-primary-green">Password</div>
                 <PrimaryInput
                   control={control}
@@ -93,14 +91,13 @@ const LoginScreen = () => {
                   iconOnPress={() => {
                     setState({ passwordIcon: !state.passwordIcon });
                   }}
-                  value={state.password}
                 />
               </div>
               <div className="flex justify-end">
-                <div className="font-DMSans-bold text-sm py-2  text-primary-green cursor-pointer">Forget Password</div>
+                <div className="font-DMSans-bold text-sm py-2  text-primary-green cursor-pointer" onClick={()=>Functions.navigate('/forgot_password')}>Forget Password</div>
               </div>
               <div className="login_btn">
-                <PrimaryButton text={"LOG IN"} onClick={() => handleSubmit((e: Record<string, string>) => userLogin(e))} />
+                <PrimaryButton text={"Log In"} />
               </div>
               <div className="font-DMSans-regular text-sm text-primary-green my-4 text-center">OR</div>
               <div className="w-full justify-center flex">
@@ -108,7 +105,7 @@ const LoginScreen = () => {
                   <GoogleLogin
                     onSuccess={userGoogleLogin}
                     onError={() => {
-                      toastFailure("Login Failed");
+                      Functions.toastFailure("Login Failed");
                     }}
                     useOneTap
                     width={420}

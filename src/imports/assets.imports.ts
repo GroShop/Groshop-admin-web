@@ -1,12 +1,12 @@
 // @ts-nocheck
 // import closeIcon from '../assets/icons/close';
-import logo from '@/assets/icons/logo.svg';
+import logo from "@/assets/icons/logo.svg";
 // import signIn from '../assets/icons/sign_in';
 // import checkBoxActive from '../assets/icons/checkbox_active';
 // import checkBoxInActive from '../assets/icons/checkbox_inactive';
 // import backIcon from '../assets/icons/back_icon';
-import eyeActive from '@/assets/icons/eye_active.svg';
-import eyeInActive from '@/assets/icons/eye_inactive.svg';
+import eyeActive from "@/assets/icons/eye_active.svg";
+import eyeInActive from "@/assets/icons/eye_inactive.svg";
 // import radioActive from '../assets/icons/radio_active';
 // import radioInActive from '../assets/icons/radio_inactive';
 // import passwordImg from '../assets/icons/password_img';
@@ -16,13 +16,25 @@ import eyeInActive from '@/assets/icons/eye_inactive.svg';
 // import homeActive from '../assets/icons/home_active';
 // import notificationInactive from '../assets/icons/notification_inactive';
 // import notificationActive from '../assets/icons/notification_active';
-// import profileInactive from '../assets/icons/profile_inactive';
-// import profileActive from '../assets/icons/profile_active';
+import userInactive from "@/assets/icons/user_inactive.svg";
+import userActive from "@/assets/icons/user_active.svg";
+import dashboardInactive from "@/assets/icons/dashboard_inactive.svg";
+import dashboardActive from "@/assets/icons/dashboard_active.svg";
+import logoutInactive from "@/assets/icons/logout_inactive.svg";
+import logoutActive from "@/assets/icons/logout_active.svg";
+import productInactive from "@/assets/icons/product_inactive.svg";
+import productActive from "@/assets/icons/product_active.svg";
+import bookingInactive from "@/assets/icons/booking_inactive.svg";
+import bookingActive from "@/assets/icons/booking_active.svg";
+import chatInactive from "@/assets/icons/chat_inactive.svg";
+import chatActive from "@/assets/icons/chat_active.svg";
+import notificationInactive from "@/assets/icons/notification_inactive.svg";
+import notificationActive from "@/assets/icons/notification_active.svg";
 // import messageInactive from '../assets/icons/message_inactive';
 // import messageActive from '../assets/icons/message_active';
 // import cartIcon from '../assets/icons/cart_icon';
-// import userIcon from '../assets/icons/user';
-// import searchIcon from '../assets/icons/search';
+import userIcon from "@/assets/icons/user.svg";
+import searchIcon from "@/assets/icons/search.svg";
 // import productIcon from '../assets/icons/product.png';
 // import buyCart from '../assets/icons/buy_cart';
 // import favoriteIconInactive from '../assets/icons/favorite_inactive';
@@ -68,74 +80,88 @@ import eyeInActive from '@/assets/icons/eye_inactive.svg';
 // import farmer_shop from '../assets/icons/farmer_shop';
 
 const Assets = {
-//   closeIcon,
+  //   closeIcon,
   logo,
-//   signIn,
-//   checkBoxActive,
-//   checkBoxInActive,
-//   backIcon,
+  //   signIn,
+  //   checkBoxActive,
+  //   checkBoxInActive,
+  //   backIcon,
   eyeActive,
   eyeInActive,
-//   radioActive,
-//   radioInActive,
-//   passwordImg,
-//   tickIcon,
-//   googleIcon,
-//   homeInactive,
-//   homeActive,
-//   notificationActive,
-//   notificationInactive,
-//   messageInactive,
-//   messageActive,
-//   profileActive,
-//   profileInactive,
-//   cartIcon,
-//   userIcon,
-//   searchIcon,
-//   productIcon,
-//   buyCart,
-//   plusIcon,
-//   minusIcon,
-//   cartActive,
-//   filterIcon,
-//   shopCart,
-//   trashIcon,
-//   voucherIcon,
-//   arrowRight,
-//   homeOutline,
-//   favoriteIconInactive,
-//   favoriteIconActive,
-//   star,
-//   timeIcon,
-//   shippingIcon,
-//   officeIcon,
-//   editIcon,
-//   plus,
-//   deliveryActive,
-//   deliveryInactive,
-//   processActive,
-//   processInactive,
-//   placedActive,
-//   placedInactive,
-//   dispatchActive,
-//   dispatchInactive,
-//   profileIcon,
-//   user,
-//   addressIcon,
-//   resetIcon,
-//   logoutIcon,
-//   profileIcon,
-//   orderIcon,
-//   wishlistIcon,
-//   notification,
-//   cameraIcon,
-//   uploadCamera,
-//   galleryIcon,
-//   loader,
-//   product_loader,
-//   shopping_cart,
-//   farmer_shop,
-//   send_btn
+  //   radioActive,
+  //   radioInActive,
+  //   passwordImg,
+  //   tickIcon,
+  //   googleIcon,
+  //   homeInactive,
+  //   homeActive,
+  //   notificationActive,
+  //   notificationInactive,
+  //   messageInactive,
+  //   messageActive,
+  //   profileActive,
+  //   profileInactive,
+  //   cartIcon,
+  userIcon,
+  searchIcon,
+  //   productIcon,
+  //   buyCart,
+  //   plusIcon,
+  //   minusIcon,
+  //   cartActive,
+  //   filterIcon,
+  //   shopCart,
+  //   trashIcon,
+  //   voucherIcon,
+  //   arrowRight,
+  //   homeOutline,
+  //   favoriteIconInactive,
+  //   favoriteIconActive,
+  //   star,
+  //   timeIcon,
+  //   shippingIcon,
+  //   officeIcon,
+  //   editIcon,
+  //   plus,
+  //   deliveryActive,
+  //   deliveryInactive,
+  //   processActive,
+  //   processInactive,
+  //   placedActive,
+  //   placedInactive,
+  //   dispatchActive,
+  //   dispatchInactive,
+  //   profileIcon,
+  //   user,
+  //   addressIcon,
+  //   resetIcon,
+  //   logoutIcon,
+  //   profileIcon,
+  //   orderIcon,
+  //   wishlistIcon,
+  //   notification,
+  //   cameraIcon,
+  //   uploadCamera,
+  //   galleryIcon,
+  //   loader,
+  //   product_loader,
+  //   shopping_cart,
+  //   farmer_shop,
+  //   send_btn,
+  userActive,
+  userInactive,
+  bookingActive,
+  bookingInactive,
+  dashboardActive,
+  dashboardInactive,
+  logoutActive,
+  logoutInactive,
+  productActive,
+  productInactive,
+  notificationActive,
+  notificationInactive,
+  chatActive,
+  chatInactive,
 };
 
 export default Assets;

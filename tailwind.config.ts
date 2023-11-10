@@ -28,6 +28,7 @@ const config: Config = {
       'Inter-semibold': ['Inter-SemiBold'],
       'Inter-bold': ['Inter-Bold'],
     },
+    
     colors: {
       'light-gray':'#DADDD8',
       'primary-green': '#689C36',
@@ -44,6 +45,9 @@ const config: Config = {
       'product-gray': '#FCFFFD',
       success: '#E6F8D5',
     },
+    boxShadow: {
+      'inset-custom': '5px 17px 31px -11px #ACADAC',
+    },
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -54,4 +58,4 @@ const config: Config = {
   },
   plugins: [],
 }
-export default config
+export default config;

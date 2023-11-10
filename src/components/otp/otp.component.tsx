@@ -38,7 +38,7 @@ const OtpComponent = (props: IOtpComponent) => {
       const id = setInterval(() => setState({ counter: state.counter - 1 }), 1000);
       return () => clearInterval(id);
     }
-  }, [, state.counter]);
+  }, [state.counter]);
 
   return (
     <div className={`w-full ${props.style}`}>

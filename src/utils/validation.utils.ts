@@ -6,6 +6,7 @@ const Validation: any = {
     email: z.string().nonempty("Please Enter Email").email("Invalid Email"),
     password: z.string().min(6, { message: "Minimum Password at least 6 characters" }).nonempty("Please Enter Password"),
   }),
+  
   otpScheme: z.object({
     otp: z.string().min(4, { message: "Invalid Otp" }).nonempty("Please Enter Otp"),
   }),

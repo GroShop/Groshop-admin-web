@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import PrimaryInput from "@/common_components/ui/primaryInput/primaryInput.component";
 import Models from "@/imports/models.imports";
 import PrimaryButton from "@/common_components/ui/primaryButton/primaryButton";
-import {  useSetState } from "@/utils/functions.utils";
+import { useSetState } from "@/utils/functions.utils";
 import { Assets, Container, Functions, Validation } from "@/utils/import.utils";
 import Image from "next/image";
 import { useMutation } from "@tanstack/react-query";
@@ -39,8 +39,11 @@ const LoginScreen = () => {
       localStorage.setItem("user_id", res.data._id);
       localStorage.setItem("role", res.data.role);
       localStorage.setItem("token", res.token);
-      Functions.navigate( "/home");
+      Functions.navigate("/home");
     },
+    onError: (err: any) => {
+      Functions.toastFailure(err.message)
+    }
   });
 
   const userGoogleLogin = async (e: Record<string, any>) => {
@@ -94,7 +97,12 @@ const LoginScreen = () => {
                 />
               </div>
               <div className="flex justify-end">
-                <div className="font-DMSans-bold text-sm py-2  text-primary-green cursor-pointer" onClick={()=>Functions.navigate('/forgot_password')}>Forget Password</div>
+                <div
+                  className="font-DMSans-bold text-sm py-2  text-primary-green cursor-pointer"
+                  onClick={() => Functions.navigate("/forgot_password")}
+                >
+                  Forget Password
+                </div>
               </div>
               <div className="login_btn">
                 <PrimaryButton text={"Log In"} />

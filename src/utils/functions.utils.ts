@@ -1,4 +1,4 @@
-import { useState,useOptimistic, useMemo } from "react";
+import { useState,useOptimistic, useMemo, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import toast, { Toaster } from 'react-hot-toast';
 import Compressor from 'compressorjs';
@@ -23,28 +23,28 @@ export const useSetState = (initialState: any) => {
   return [state, newSetState];
 };
 
-export const useSetOptimistic = (initialState:any) => {
-  const [state, setState] = useState(initialState);
+// export const useSetOptimistic = (initialState:any) => {
+//   const [state, setState] = useState(initialState);
 
-  const optimisticUpdate = (updateFunction:any, updateValue:any) => {
-    // Capture the current state
-    const currentState = state;
+//   const optimisticUpdate = (updateFunction:any, updateValue:any) => {
+//     // Capture the current state
+//     const currentState = state;
 
-    // Perform the optimistic update immediately
-    const optimisticResult = updateFunction(currentState, updateValue);
+//     // Perform the optimistic update immediately
+//     const optimisticResult = updateFunction(currentState, updateValue);
 
-    // Update the state with the optimistic result
-    setState(optimisticResult);
+//     // Update the state with the optimistic result
+//     setState(optimisticResult);
 
-    // Return a function to revert the optimistic update
-    const revertUpdate = () => setState(currentState);
+//     // Return a function to revert the optimistic update
+//     const revertUpdate = () => setState(currentState);
 
-    // Return the optimistic result and the revert function
-    return [optimisticResult, revertUpdate];
-  };
+//     // Return the optimistic result and the revert function
+//     return [optimisticResult, revertUpdate];
+//   };
 
-  return [state, optimisticUpdate];
-};
+//   return [state, optimisticUpdate];
+// };
 
 
 export const uploadFile = (
@@ -126,3 +126,4 @@ export const phoneRegex = new RegExp(
 export const navigate = (path:string) => {
   window.location.href = path
 }
+

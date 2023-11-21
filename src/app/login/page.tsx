@@ -42,8 +42,8 @@ const LoginScreen = () => {
       Functions.navigate("/home");
     },
     onError: (err: any) => {
-      Functions.toastFailure(err.message)
-    }
+      Functions.toastFailure(err.message);
+    },
   });
 
   const userGoogleLogin = async (e: Record<string, any>) => {

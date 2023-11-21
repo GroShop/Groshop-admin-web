@@ -16,6 +16,7 @@ interface IPrimaryInputProps {
   isMultiLine?: boolean;
   rules?: unknown;
   control: any;
+  onKeyDown?:(event: KeyboardEvent) => void;
 }
 
 const PrimaryInput = (props: IPrimaryInputProps) => {
@@ -40,6 +41,7 @@ const PrimaryInput = (props: IPrimaryInputProps) => {
                   autoCapitalize="none"
                   onChange={onChange}
                   value={value}
+                  onKeyDown={props.onKeyDown}
                 />
                 {props.icon && (
                   <div onClick={props.iconOnPress} className="pr-3 cursor-pointer">

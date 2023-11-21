@@ -129,7 +129,7 @@ const auth = {
   },
   getManyUser: () => {
     let promise = new Promise((resolve, reject) => {
-      let url = "user";
+      let url = 'message/get_many_message';
       instance()
         .get(url)
         .then((res) => {
